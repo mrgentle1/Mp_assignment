@@ -2,10 +2,14 @@ package com.example.mp_assignment;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -37,7 +41,31 @@ public class ListActivity extends AppCompatActivity {
 
                 }
                 else{
+                    AlertDialog.Builder ad = new AlertDialog.Builder(ListActivity.this);
+                    ad.setIcon(R.mipmap.ic_launcher);
+                    ad.setTitle("제목");
+                    ad.setMessage("로그인이 필요합니다. 회원가입을 하시겠습니까?");
 
+                    ad.setPositiveButton("예", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            Log.v("test", "예 클릭");
+                            Intent intent = new Intent(getApplicationContext(),
+                                    RegisterActivity.class);
+                            startActivity(intent);
+                            dialogInterface.dismiss();
+                        }
+                    });
+
+                    ad.setNegativeButton("아니오", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            Log.v("test", "아니오 클릭");
+                            dialogInterface.dismiss();
+                        }
+                    });
+
+                    ad.show();
                 }
             }
         });

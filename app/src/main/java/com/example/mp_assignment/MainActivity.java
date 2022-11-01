@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 String idx = Integer.toString(preferences.getInt(user_id, -1));
 
                 if (idx.equals("-1")){
-                    //TODO: 아이디가 없는 경우
+                    // 아이디가 없는 경우
                     Log.v("test", "아이디 없음!");
                     id.setError("User not found");
                 }
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                     // [0]: id, [1]: pwd, [2]: name [3]: number [4]: address
                     String[] userarray = userdata.split(" ");
                     if(user_pwd.equals(userarray[1])){
-                        //TODO: password가 일치하는 경우
+                        // password가 일치하는 경우
                         Context context = getApplicationContext();
                         CharSequence text = "로그인 성공!";
 
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                     }
                     else{
-                        //TODO: password가 틀렸을 경우
+                        // password가 틀렸을 경우
                         Log.v("test", "비밀번호 틀림!");
                         password.setError("incorrect password");
                     }
