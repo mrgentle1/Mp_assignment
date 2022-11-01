@@ -1,5 +1,9 @@
 # 20203049 Mobile Programming Assignment
 
+### 개발버전
+Last update: 2022-11-01<br>
+SDK (안드로이드12)
+
 ### 첫 번째 페이지 (로그인 화면)
 - Relative Layout을 사용하여 액티비티 화면 구성
 - 앱 접속 페이지, 회원 ID/비밀번호 로그인 구현
